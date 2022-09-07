@@ -1,6 +1,6 @@
-namespace Throw.UnitTests.ValidatableCreation;
-
 using OneOf;
+
+namespace Throw.UnitTests.ValidatableCreation;
 
 [TestClass]
 public class ValidatableCreationExtensionsTests

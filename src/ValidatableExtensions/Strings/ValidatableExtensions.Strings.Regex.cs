@@ -1,6 +1,6 @@
-namespace Throw;
-
 using System.Text.RegularExpressions;
+
+namespace Throw;
 
 /// <summary>
 /// Extension methods for strings.
