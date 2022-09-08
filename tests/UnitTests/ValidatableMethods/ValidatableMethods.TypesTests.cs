@@ -15,7 +15,7 @@ public class TypesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Parameter should not be of type '{str.GetType().Name}'. (Parameter '{nameof(str)}')");
+            .WithMessage(new ArgumentException($"Parameter should not be of type '{str.GetType().Name}'.", nameof(str)).Message);
     }
 
     [TestMethod]
@@ -30,7 +30,7 @@ public class TypesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Parameter should not be of type '{list.GetType().Name}'. (Parameter '{nameof(list)}')");
+            .WithMessage(new ArgumentException($"Parameter should not be of type '{list.GetType().Name}'.", nameof(list)).Message);
     }
 
     [TestMethod]
@@ -58,7 +58,7 @@ public class TypesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Parameter should be of type '{typeof(int).Name}'. (Parameter '{nameof(str)}')");
+            .WithMessage(new ArgumentException($"Parameter should be of type '{typeof(int).Name}'.", nameof(str)).Message);
     }
 
     [TestMethod]
