@@ -20,7 +20,7 @@ public class StringPropertiesRegexTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not match RegEx pattern '{regexPattern}' (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not match RegEx pattern '{regexPattern}'", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [DataTestMethod]
@@ -55,7 +55,7 @@ public class StringPropertiesRegexTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not match RegEx pattern '{regex}' (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not match RegEx pattern '{regex}'", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [DataTestMethod]
@@ -90,7 +90,7 @@ public class StringPropertiesRegexTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should match RegEx pattern '{regexPattern}' (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should match RegEx pattern '{regexPattern}'", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [DataTestMethod]
@@ -125,7 +125,7 @@ public class StringPropertiesRegexTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should match RegEx pattern '{regex}' (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should match RegEx pattern '{regex}'", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [DataTestMethod]
