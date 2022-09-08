@@ -15,7 +15,7 @@ public class BooleanPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not meet condition (condition: 'p => p.Id == 1'). (Parameter '{nameof(person)}')");
+            .WithMessage(new ArgumentException("Value should not meet condition (condition: 'p => p.Id == 1').", nameof(person)).Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class BooleanPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should meet condition (condition: 'p => p.Id == 2'). (Parameter '{nameof(person)}')");
+            .WithMessage(new ArgumentException("Value should meet condition (condition: 'p => p.Id == 2').", nameof(person)).Message);
     }
 
     [TestMethod]
