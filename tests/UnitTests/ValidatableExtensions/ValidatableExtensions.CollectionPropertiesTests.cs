@@ -15,7 +15,7 @@ public class CollectionPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection should not be empty. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection should not be empty.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class CollectionPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection should be empty. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection should be empty.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class CollectionPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection count should not be equal to 1. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection count should not be equal to 1.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class CollectionPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection count should be equal to 2. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection count should be equal to 2.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -128,7 +128,7 @@ public class CollectionPropertiesTests
         action.Should()
             .ThrowExactly<ArgumentException>()
             .WithMessage(
-                $"Collection count should not be greater than 0. (Parameter '{nameof(person)}: p => p.Friends')");
+                new ArgumentException("Collection count should not be greater than 0.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -169,7 +169,7 @@ public class CollectionPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection count should not be less than 2. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection count should not be less than 2.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -210,7 +210,7 @@ public class CollectionPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection should not have null elements. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection should not have null elements.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -237,7 +237,7 @@ public class CollectionPropertiesTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection should not contain element. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection should not contain element.",  $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
@@ -264,7 +264,7 @@ public class CollectionPropertiesTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"Collection should contain element. (Parameter '{nameof(person)}: p => p.Friends')");
+            .WithMessage(new ArgumentException("Collection should contain element.", $"{nameof(person)}: p => p.Friends").Message);
     }
 
     [TestMethod]
