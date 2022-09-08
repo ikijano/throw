@@ -13,7 +13,7 @@ public class BooleansTests
         Action action = () => value.Throw().IfTrue();
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"Value should not be true. (Parameter '{nameof(value)}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException("Value should not be true.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -52,7 +52,7 @@ public class BooleansTests
         Action action = () => value.Throw().IfFalse();
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"Value should be true. (Parameter '{nameof(value)}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException("Value should be true.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -67,7 +67,7 @@ public class BooleansTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not meet condition (condition: 'value.Length > 0'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("Value should not meet condition (condition: 'value.Length > 0').", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -108,6 +108,6 @@ public class BooleansTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should meet condition (condition: 'value.Length == 0'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("Value should meet condition (condition: 'value.Length == 0').", nameof(value)).Message);
     }
 }
