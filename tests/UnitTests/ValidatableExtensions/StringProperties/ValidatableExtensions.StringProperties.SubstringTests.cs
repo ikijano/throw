@@ -28,7 +28,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not end with 'hn' (comparison Type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not end with 'hn' (comparison Type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not end with 'HN' (comparison Type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not end with 'HN' (comparison Type: '{StringComparison.OrdinalIgnoreCase}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -58,7 +58,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should end with 'Jo' (comparison Type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should end with 'Jo' (comparison Type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -112,7 +112,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not start with 'Jo' (comparison Type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not start with 'Jo' (comparison Type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -127,7 +127,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not start with 'JO' (comparison Type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not start with 'JO' (comparison Type: '{StringComparison.OrdinalIgnoreCase}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -142,7 +142,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should start with 'hn' (comparison Type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should start with 'hn' (comparison Type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -182,7 +182,7 @@ public class StringPropertiesSubstringTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not contain 'oh' (comparison Type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not contain 'oh' (comparison Type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -209,7 +209,7 @@ public class StringPropertiesSubstringTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should contain 'Oh' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should contain 'Oh' (comparison type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -240,7 +240,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not contain '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not contain '{otherValue}' (comparison type: '{comparisonType}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [DataTestMethod]
@@ -274,7 +274,7 @@ public class StringPropertiesSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should contain '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should contain '{otherValue}' (comparison type: '{comparisonType}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [DataTestMethod]
