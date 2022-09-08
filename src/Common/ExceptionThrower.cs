@@ -55,7 +55,7 @@ public static class ExceptionThrower
     public static void Throw(
         string paramName,
         ExceptionCustomizations? exceptionCustomizations = null,
-        string? generalMessage = null)
+        string? generalMessage = "Value does not fall within the expected range")
     {
         if (exceptionCustomizations is null)
         {

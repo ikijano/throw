@@ -10,7 +10,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.ThrowNull(paramName: ParameterConstants.ParamName);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentNullException>().WithMessage($"Value cannot be null. (Parameter '{ParameterConstants.ParamName}')");
+        action.Should().ThrowExactly<ArgumentNullException>().WithMessage(new ArgumentNullException(message: "Value cannot be null.", paramName: ParameterConstants.ParamName).Message);
     }
 
     public void ThrowNull_WhenNoCustomizationsButCustomGeneralMessage_ShouldThrowArgumentNullExceptionWithGeneralMessage()
@@ -19,7 +19,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.ThrowNull(paramName: ParameterConstants.ParamName, generalMessage: ParameterConstants.CustomMessage);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentNullException>().WithMessage($"{ParameterConstants.CustomMessage} (Parameter '{ParameterConstants.ParamName}')");
+        action.Should().ThrowExactly<ArgumentNullException>().WithMessage(new ArgumentNullException(message: ParameterConstants.CustomMessage, paramName: ParameterConstants.ParamName).Message);
     }
 
     [TestMethod]
@@ -32,7 +32,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.ThrowNull(ParameterConstants.ParamName, exceptionCustomizations);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentNullException>().WithMessage($"{ParameterConstants.CustomMessage} (Parameter '{ParameterConstants.ParamName}')");
+        action.Should().ThrowExactly<ArgumentNullException>().WithMessage(new ArgumentException(ParameterConstants.CustomMessage, ParameterConstants.ParamName).Message);
     }
 
     [TestMethod]
@@ -81,7 +81,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.ThrowOutOfRange(paramName: ParameterConstants.ParamName, actualValue: ParameterConstants.ActualValue);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentOutOfRangeException>().WithMessage($"Specified argument was out of the range of valid values. (Parameter '{ParameterConstants.ParamName}')\nActual value was {ParameterConstants.ActualValue}.");
+        action.Should().ThrowExactly<ArgumentOutOfRangeException>().WithMessage(new ArgumentOutOfRangeException(message: "Specified argument was out of the range of valid values.", paramName: ParameterConstants.ParamName, actualValue: ParameterConstants.ActualValue).Message);
     }
 
     [TestMethod]
@@ -91,7 +91,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.ThrowOutOfRange(paramName: ParameterConstants.ParamName, actualValue: ParameterConstants.ActualValue, generalMessage: ParameterConstants.CustomMessage);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentOutOfRangeException>().WithMessage($"{ParameterConstants.CustomMessage} (Parameter '{ParameterConstants.ParamName}')\nActual value was {ParameterConstants.ActualValue}.");
+        action.Should().ThrowExactly<ArgumentOutOfRangeException>().WithMessage(new ArgumentOutOfRangeException(message: ParameterConstants.CustomMessage, paramName: ParameterConstants.ParamName, actualValue: ParameterConstants.ActualValue).Message);
     }
 
     [TestMethod]
@@ -104,7 +104,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.ThrowOutOfRange(ParameterConstants.ParamName, ParameterConstants.ActualValue, exceptionCustomizations);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentOutOfRangeException>().WithMessage($"{ParameterConstants.CustomMessage} (Parameter '{ParameterConstants.ParamName}')\nActual value was {ParameterConstants.ActualValue}.");
+        action.Should().ThrowExactly<ArgumentOutOfRangeException>().WithMessage(new ArgumentOutOfRangeException(message: ParameterConstants.CustomMessage, paramName: ParameterConstants.ParamName, actualValue: ParameterConstants.ActualValue).Message);
     }
 
     [TestMethod]
@@ -153,7 +153,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.Throw(paramName: ParameterConstants.ParamName);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"Value does not fall within the expected range. (Parameter '{ParameterConstants.ParamName}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException("Value does not fall within the expected range", ParameterConstants.ParamName).Message);
     }
 
     [TestMethod]
@@ -163,7 +163,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.Throw(paramName: ParameterConstants.ParamName, generalMessage: ParameterConstants.CustomMessage);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"{ParameterConstants.CustomMessage} (Parameter '{ParameterConstants.ParamName}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException(ParameterConstants.CustomMessage, ParameterConstants.ParamName).Message);
     }
 
     [TestMethod]
@@ -176,7 +176,7 @@ public class ExceptionThrowerTests
         Action action = () => ExceptionThrower.Throw(ParameterConstants.ParamName, exceptionCustomizations);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"{ParameterConstants.CustomMessage} (Parameter '{ParameterConstants.ParamName}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException(ParameterConstants.CustomMessage, ParameterConstants.ParamName).Message);
     }
 
     [TestMethod]
