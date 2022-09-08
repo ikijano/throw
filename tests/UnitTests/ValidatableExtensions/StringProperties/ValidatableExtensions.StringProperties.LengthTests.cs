@@ -14,7 +14,7 @@ public class StringPropertiesLengthTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be longer than 3 characters. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be longer than 3 characters.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -41,7 +41,7 @@ public class StringPropertiesLengthTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be shorter than 10 characters. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be shorter than 10 characters.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -68,7 +68,7 @@ public class StringPropertiesLengthTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String length should not be equal to 7. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String length should not be equal to 7.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -95,7 +95,7 @@ public class StringPropertiesLengthTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String length should be equal to 100. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String length should be equal to 100.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
