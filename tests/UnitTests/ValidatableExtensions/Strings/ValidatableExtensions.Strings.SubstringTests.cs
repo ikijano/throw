@@ -28,7 +28,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not end with 'hn' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(name)}')");
+            .WithMessage(new ArgumentException($"String should not end with 'hn' (comparison type: '{StringComparison.Ordinal}').", nameof(name)).Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not end with 'HN' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(name)}')");
+            .WithMessage(new ArgumentException($"String should not end with 'HN' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", nameof(name)).Message);
     }
 
     [TestMethod]
@@ -58,7 +58,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should end with 'Jo' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(name)}')");
+            .WithMessage(new ArgumentException($"String should end with 'Jo' (comparison type: '{StringComparison.Ordinal}').", nameof(name)).Message);
     }
 
     [TestMethod]
@@ -112,7 +112,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not start with 'Jo' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(name)}')");
+            .WithMessage(new ArgumentException($"String should not start with 'Jo' (comparison type: '{StringComparison.Ordinal}').", nameof(name)).Message);
     }
 
     [TestMethod]
@@ -127,7 +127,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not start with 'JO' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(name)}')");
+            .WithMessage(new ArgumentException($"String should not start with 'JO' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", nameof(name)).Message);
     }
 
     [TestMethod]
@@ -142,7 +142,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should start with 'hn' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(name)}')");
+            .WithMessage(new ArgumentException($"String should start with 'hn' (comparison type: '{StringComparison.Ordinal}').", nameof(name)).Message);
     }
 
     [TestMethod]
@@ -184,7 +184,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not contain '{otherValue}' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not contain '{otherValue}' (comparison type: '{StringComparison.Ordinal}').", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -214,7 +214,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should contain '{otherValue}' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should contain '{otherValue}' (comparison type: '{StringComparison.Ordinal}').", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -243,7 +243,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not contain '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not contain '{otherValue}' (comparison type: '{comparisonType}').", nameof(value)).Message);
     }
 
     [DataTestMethod]
@@ -271,7 +271,7 @@ public class StringSubstringTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should contain '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should contain '{otherValue}' (comparison type: '{comparisonType}').", nameof(value)).Message);
     }
 
     [DataTestMethod]
