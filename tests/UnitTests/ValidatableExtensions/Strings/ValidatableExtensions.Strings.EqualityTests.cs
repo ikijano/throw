@@ -15,7 +15,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be white space only. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("String should not be white space only.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be empty. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("String should not be empty.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to 'value' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not be equal to 'value' (comparison type: '{StringComparison.Ordinal}').", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not be equal to '{otherValue}' (comparison type: '{comparisonType}').", nameof(value)).Message);
     }
 
     [DataTestMethod]
@@ -127,7 +127,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to 'value' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not be equal to 'value' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -142,7 +142,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to 'VALUE' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not be equal to 'VALUE' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -170,7 +170,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should be equal to 'different value' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should be equal to 'different value' (comparison type: '{StringComparison.Ordinal}').", nameof(value)).Message);
     }
 
     [DataTestMethod]
@@ -198,7 +198,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should be equal to '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should be equal to '{otherValue}' (comparison type: '{comparisonType}').", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -226,7 +226,7 @@ public class StringEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should be equal to 'different value' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should be equal to 'different value' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", nameof(value)).Message);
     }
 
     [TestMethod]
