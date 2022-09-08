@@ -15,7 +15,7 @@ public class StringLengthTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be longer than 2 characters. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not be longer than 2 characters.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class StringLengthTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be shorter than 100 characters. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String should not be shorter than 100 characters.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class StringLengthTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String length should not be equal to 5. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("String length should not be equal to 5.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class StringLengthTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String length should be equal to 100. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException($"String length should be equal to 100.", nameof(value)).Message);
     }
 
     [TestMethod]
