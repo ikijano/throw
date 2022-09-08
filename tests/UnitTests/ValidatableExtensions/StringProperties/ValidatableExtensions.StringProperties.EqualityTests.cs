@@ -14,7 +14,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be white space only. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be white space only.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -41,7 +41,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be null or empty. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be null or empty.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -55,7 +55,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be null or empty. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be null or empty.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -95,7 +95,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be null or whitespace. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be null or whitespace.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -109,7 +109,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be null or whitespace. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be null or whitespace.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -123,7 +123,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be null or whitespace. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be null or whitespace.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -150,7 +150,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be empty. (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException("String should not be empty.", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -177,7 +177,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to 'Amichai' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not be equal to 'Amichai' (comparison type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -208,7 +208,7 @@ public class StringPropertiesEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not be equal to '{otherValue}' (comparison type: '{comparisonType}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [DataTestMethod]
@@ -238,7 +238,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should be equal to 'Amiko' (comparison type: '{StringComparison.Ordinal}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should be equal to 'Amiko' (comparison type: '{StringComparison.Ordinal}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -285,7 +285,7 @@ public class StringPropertiesEqualityTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"String should be equal to '{otherValue}' (comparison type: '{comparisonType}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should be equal to '{otherValue}' (comparison type: '{comparisonType}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -299,7 +299,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to 'Amichai' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not be equal to 'Amichai' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -313,7 +313,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should not be equal to 'Amichai' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should not be equal to 'Amichai' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
@@ -340,7 +340,7 @@ public class StringPropertiesEqualityTests
 
         // Assert
         action.Should().ThrowExactly<ArgumentException>()
-            .WithMessage($"String should be equal to 'Amiko' (comparison type: '{StringComparison.OrdinalIgnoreCase}'). (Parameter '{nameof(person)}: p => p.Name')");
+            .WithMessage(new ArgumentException($"String should be equal to 'Amiko' (comparison type: '{StringComparison.OrdinalIgnoreCase}').", $"{nameof(person)}: p => p.Name").Message);
     }
 
     [TestMethod]
