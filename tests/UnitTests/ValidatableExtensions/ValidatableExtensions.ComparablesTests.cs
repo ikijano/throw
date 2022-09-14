@@ -15,7 +15,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be greater than 4. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be greater than 4.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -56,7 +56,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be greater than or equal to 4. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be greater than or equal to 4.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -84,7 +84,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be greater than or equal to 5. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be greater than or equal to 5.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be less than 6. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be less than 6.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -140,7 +140,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be less than or equal to 6. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be less than or equal to 6.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -168,7 +168,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be less than or equal to 5. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be less than or equal to 5.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -183,7 +183,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be greater than 0. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be greater than 0.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -224,7 +224,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be greater than or equal to 0. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be greater than or equal to 0.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -252,7 +252,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be greater than or equal to 0. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be greater than or equal to 0.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -267,7 +267,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be less than 0. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be less than 0.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -308,7 +308,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be less than or equal to 0. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be less than or equal to 0.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -336,7 +336,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should not be less than or equal to 0. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be less than or equal to 0.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -351,7 +351,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should be between 0 and 4. (Parameter '{nameof(value)}')\nActual value was {value}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should be between 0 and 4.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -418,7 +418,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage("Value should not be between 4 and 6. (Parameter 'value')\nActual value was 5.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be between 4 and 6.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -433,7 +433,7 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage("Value should not be between 5 and 6. (Parameter 'value')\nActual value was 5.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be between 5 and 6.", paramName: nameof(value), actualValue: value).Message);
     }
 
     [TestMethod]
@@ -448,6 +448,6 @@ public class ComparablesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage("Value should not be between 4 and 5. (Parameter 'value')\nActual value was 5.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should not be between 4 and 5.", paramName: nameof(value), actualValue: value).Message);
     }
 }
