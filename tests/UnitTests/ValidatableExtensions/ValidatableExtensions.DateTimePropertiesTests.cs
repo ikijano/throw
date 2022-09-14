@@ -15,7 +15,7 @@ public class DateTimePropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be Utc. (Parameter '{nameof(person)}: p => p.BirthDate')");
+            .WithMessage(new ArgumentException("Value should not be Utc.", paramName: $"{nameof(person)}: p => p.BirthDate").Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class DateTimePropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be Utc. (Parameter '{nameof(person)}: p => p.BirthDate')");
+            .WithMessage(new ArgumentException("Value should be Utc.", $"{nameof(person)}: p => p.BirthDate").Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class DateTimePropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be Utc. (Parameter '{nameof(person)}: p => p.BirthDate')");
+            .WithMessage(new ArgumentException("Value should not be Utc.", $"{nameof(person)}: p => p.BirthDate").Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class DateTimePropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be Utc. (Parameter '{nameof(person)}: p => p.BirthDate')");
+            .WithMessage(new ArgumentException("Value should be Utc.", $"{nameof(person)}: p => p.BirthDate").Message);
     }
 
     [TestMethod]
