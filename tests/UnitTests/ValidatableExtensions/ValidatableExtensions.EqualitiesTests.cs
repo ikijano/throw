@@ -15,7 +15,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be default. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("Value should not be default.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be default. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("Value should be default.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be equal to 5. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("Value should not be equal to 5.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be equal to 6. (Parameter '{nameof(value)}')");
+            .WithMessage(new ArgumentException("Value should be equal to 6.", nameof(value)).Message);
     }
 
     [TestMethod]
@@ -128,7 +128,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be equal to {value2}. (Parameter '{nameof(value1)}')");
+            .WithMessage(new ArgumentException($"Value should not be equal to {value2}.", nameof(value1)).Message);
     }
 
     [TestMethod]
@@ -158,7 +158,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be equal to {value2}. (Parameter '{nameof(value1)}')");
+            .WithMessage(new ArgumentException($"Value should be equal to {value2}.", nameof(value1)).Message);
     }
 
     [TestMethod]
@@ -188,7 +188,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be equal to {value2}. (Parameter '{nameof(value1)}')");
+            .WithMessage(new ArgumentException($"Value should not be equal to {value2}.", nameof(value1)).Message);
     }
 
     [TestMethod]
@@ -218,7 +218,7 @@ public class EqualitiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be equal to {value2}. (Parameter '{nameof(value1)}')");
+            .WithMessage(new ArgumentException($"Value should be equal to {value2}.", nameof(value1)).Message);
     }
 
     [TestMethod]
