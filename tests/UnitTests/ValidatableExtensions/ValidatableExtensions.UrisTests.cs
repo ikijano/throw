@@ -15,7 +15,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should not be http. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri scheme should not be http.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should be http. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri scheme should be http.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should not be https. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri scheme should not be https.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should be https. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri scheme should be https.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -127,7 +127,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should not be {Uri.UriSchemeFtp}. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException($"Uri scheme should not be {Uri.UriSchemeFtp}.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -155,7 +155,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should be {Uri.UriSchemeFtp}. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException($"Uri scheme should be {Uri.UriSchemeFtp}.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -183,7 +183,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be relative. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri should be relative.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -211,7 +211,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be absolute. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri should be absolute.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -239,7 +239,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be absolute. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri should be absolute.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -267,7 +267,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be relative. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri should be relative.", paramName: nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -295,7 +295,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri port should not be 80. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri port should not be 80.", nameof(uri)).Message);
     }
 
     [TestMethod]
@@ -323,7 +323,7 @@ public class UrisTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri port should be 80. (Parameter '{nameof(uri)}')");
+            .WithMessage(new ArgumentException("Uri port should be 80.", nameof(uri)).Message);
     }
 
     [TestMethod]
