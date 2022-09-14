@@ -16,7 +16,7 @@ public class ConditionalCompilationTests
 #if DEBUG
         action.Should()
                 .ThrowExactly<ArgumentException>()
-                .WithMessage($"Value should not be Utc. (Parameter '{nameof(person)}: p => p.BirthDate')");
+                .WithMessage(new ArgumentException("Value should not be Utc.", $"{nameof(person)}: p => p.BirthDate").Message);
 #else
         action.Should().NotThrow();
 #endif
