@@ -15,7 +15,7 @@ public class EqualityPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentNullException>()
-            .WithMessage($"Value cannot be null. (Parameter '{nameof(value)}: v => v.Property')");
+            .WithMessage(new ArgumentException("Value cannot be null.", $"{nameof(value)}: v => v.Property").Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class EqualityPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be null. (Parameter '{nameof(value)}: v => v.Property')");
+            .WithMessage(new ArgumentException("Value should be null.", $"{nameof(value)}: v => v.Property").Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class EqualityPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be default. (Parameter '{nameof(person)}: p => p.BirthDate')");
+            .WithMessage(new ArgumentException("Value should not be default.", $"{nameof(person)}: p => p.BirthDate").Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class EqualityPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be default. (Parameter '{nameof(person)}: p => p.BirthDate')");
+            .WithMessage(new ArgumentException("Value should be default.", $"{nameof(person)}: p => p.BirthDate").Message);
     }
 
     [TestMethod]
@@ -127,7 +127,7 @@ public class EqualityPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should not be equal to 5. (Parameter '{nameof(value)}: v => v.Property')");
+            .WithMessage(new ArgumentException("Value should not be equal to 5.", $"{nameof(value)}: v => v.Property").Message);
     }
 
     [TestMethod]
@@ -155,7 +155,7 @@ public class EqualityPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Value should be equal to 6. (Parameter '{nameof(value)}: v => v.Property')");
+            .WithMessage(new ArgumentException("Value should be equal to 6.", $"{nameof(value)}: v => v.Property").Message);
     }
 
     [TestMethod]
