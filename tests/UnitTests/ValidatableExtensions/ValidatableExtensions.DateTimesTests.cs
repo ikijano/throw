@@ -13,7 +13,7 @@ public class DateTimesTests
         Action action = () => dateTime.Throw().IfUtc();
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"Value should not be Utc. (Parameter '{nameof(dateTime)}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException("Value should not be Utc.", nameof(dateTime)).Message);
     }
 
     [TestMethod]
@@ -39,7 +39,7 @@ public class DateTimesTests
         Action action = () => dateTime.Throw().IfNotUtc();
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"Value should be Utc. (Parameter '{nameof(dateTime)}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException("Value should be Utc.", nameof(dateTime)).Message);
     }
 
     [TestMethod]
@@ -65,7 +65,7 @@ public class DateTimesTests
         Action action = () => dateTime.Throw().IfDateTimeKind(DateTimeKind.Utc);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"Value should not be Utc. (Parameter '{nameof(dateTime)}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException("Value should not be Utc.", nameof(dateTime)).Message);
     }
 
     [TestMethod]
@@ -104,6 +104,6 @@ public class DateTimesTests
         Action action = () => dateTime.Throw().IfDateTimeKindNot(DateTimeKind.Utc);
 
         // Assert
-        action.Should().ThrowExactly<ArgumentException>().WithMessage($"Value should be Utc. (Parameter '{nameof(dateTime)}')");
+        action.Should().ThrowExactly<ArgumentException>().WithMessage(new ArgumentException("Value should be Utc.", nameof(dateTime)).Message);
     }
 }
