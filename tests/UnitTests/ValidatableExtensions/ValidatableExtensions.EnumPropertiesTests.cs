@@ -15,7 +15,7 @@ public class EnumPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentOutOfRangeException>()
-            .WithMessage($"Value should be defined in enum. (Parameter '{nameof(person)}: p => p.PersonType')\nActual value was {person.PersonType}.");
+            .WithMessage(new ArgumentOutOfRangeException(message: "Value should be defined in enum.", paramName: $"{nameof(person)}: p => p.PersonType", actualValue: person.PersonType).Message);
     }
 
     [TestMethod]
