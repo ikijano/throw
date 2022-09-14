@@ -15,7 +15,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should not be http. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri scheme should not be http.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -43,7 +43,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should be http. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri scheme should be http.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -71,7 +71,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should not be https. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri scheme should not be https.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -99,7 +99,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should be https. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri scheme should be https.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -127,7 +127,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should not be {Uri.UriSchemeGopher}. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException($"Uri scheme should not be {Uri.UriSchemeGopher}.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -155,7 +155,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri scheme should be {Uri.UriSchemeGopher}. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException($"Uri scheme should be {Uri.UriSchemeGopher}.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -183,7 +183,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be relative. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri should be relative.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -211,7 +211,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be absolute. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri should be absolute.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -239,7 +239,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be absolute. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri should be absolute.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -267,7 +267,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri should be relative. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri should be relative.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -295,7 +295,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri port should not be 80. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri port should not be 80.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
@@ -323,7 +323,7 @@ public class UriPropertiesTests
         // Assert
         action.Should()
             .ThrowExactly<ArgumentException>()
-            .WithMessage($"Uri port should be 80. (Parameter '{nameof(person)}: p => p.Uri')");
+            .WithMessage(new ArgumentException("Uri port should be 80.", $"{nameof(person)}: p => p.Uri").Message);
     }
 
     [TestMethod]
